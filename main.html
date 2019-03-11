@@ -1,0 +1,109 @@
+<html>
+<head>
+    <script type="text/javascript" src="C:\\Important\\jquery.js"></script>
+    <script language="javascript" type="text/javascript">
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://homework-63c7.restdb.io/rest/email_inbound",
+            "method": "GET",
+            "headers": {
+                "content-type": "application/json",
+                "x-apikey": "5c6ecf1828ca2e129e8696e8",
+                "cache-control": "no-cache"
+            }
+        }
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+
+        var jsondata = {"field1": "xyz","field2": "abc"};
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://homework-63c7.restdb.io/rest/email_inbound",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/json",
+                "x-apikey": "5c6ecf1828ca2e129e8696e8",
+                "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": JSON.stringify(jsondata)
+        }
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+		
+		/*
+     var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://homework-63c7.restdb.io/rest/email_inbound/5c7174d2fba2b62b000008d0",
+    "method": "DELETE",
+    "headers": {
+    "content-type": "application/json",
+    "x-apikey": "5c6ecf1828ca2e129e8696e8",
+    "cache-control": "no-cache"
+        }
+    }
+
+    $.ajax(settings).done(function (response) {
+    console.log(response);
+    });
+*/
+/*
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "https://homework-63c7.restdb.io/rest/email_inbound",
+          "method": "GET",
+          "headers": {
+              "content-type": "application/json",
+              "x-apikey": "5c6ecf1828ca2e129e8696e8",
+              "cache-control": "no-cache"
+          }
+      }
+
+      $.ajax(settings).done(function (response) {
+          console.log(response);
+      });
+*/
+/*
+      var jsondata = {"Укр. лит 2": "хавыхфахвахх"};
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "https://homework-63c7.restdb.io/rest/hw2/5c6d5a5031ba7a0900000fe0",
+          "method": "POST",
+          "headers": {
+              "content-type": "application/json",
+              "x-apikey": "5c6ecf1828ca2e129e8696e8",
+              "cache-control": "no-cache"
+          },
+          "processData": false,
+          "data": JSON.stringify(jsondata)
+      }
+
+      $.ajax(settings).done(function (response) {
+          console.log(response);
+      });*/
+
+        </script>
+</head>
+<body>
+</body>
+<?php
+$to      = 'yaitskiy@dlit.dp.ua';
+$subject = 'the subject';
+$message = 'hello';
+$headers = 'From: webmaster@example.com' . "\r\n" .
+    'Reply-To: webmaster@example.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+mail($to, $subject, $message, $headers);
+echo 'Done';
+?>
+</html>
