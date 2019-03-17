@@ -34,7 +34,24 @@
 	
 	<script>
 	// main script
-	// flag for uploading photo 
+	// flag for uploading photo
+	// getting variable	
+	var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://homework-63c7.restdb.io/rest/email_inbound",
+            "method": "GET",
+            "headers": {
+                "content-type": "application/json",
+                "x-apikey": "5c6ecf1828ca2e129e8696e8",
+                "cache-control": "no-cache"
+            }
+        }
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+		
 	var flag = 0;
 
 	
@@ -149,7 +166,7 @@
 		// while true(not)
 		b += 1;
 		}
-		}, 10)
+		}, 1)
 		
 		// flag = 0 for the new photo one and the loop is starting again
 		b = 0;
