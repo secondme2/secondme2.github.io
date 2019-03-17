@@ -36,22 +36,6 @@
 	// main script
 	// flag for uploading photo
 	// getting variable	
-	var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://homework-63c7.restdb.io/rest/email_inbound",
-            "method": "GET",
-            "headers": {
-                "content-type": "application/json",
-                "x-apikey": "5c6ecf1828ca2e129e8696e8",
-                "cache-control": "no-cache"
-            }
-        }
-
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
-		
 	var flag = 0;
 
 	
@@ -115,6 +99,20 @@
 		//console.log("POST ", formData);
 		setTimeout(function () {
 		if(b < 10000000){
+		var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "https://homework-63c7.restdb.io/rest/email_inbound",
+			"method": "GET",
+			"headers": {
+			"content-type": "application/json",
+			"x-apikey": "5c6ecf1828ca2e129e8696e8",
+			"cache-control": "no-cache"
+			}
+		}
+        	$.ajax(settings).done(function (response) {
+            		console.log(response);
+        	});
 		// Sleeps for 100 mili seconds
 		gettingUploading();
 		uploadAjaxSettings.data = formData;
